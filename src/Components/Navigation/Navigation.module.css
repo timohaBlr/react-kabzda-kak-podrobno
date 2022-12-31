@@ -1,0 +1,36 @@
+.button {
+    width: 80px;
+    height: 60px;
+    border: 3px solid black;
+    display: inline-block;
+}
+.on {
+    width: 80px;
+    height: 60px;
+    border: 3px solid black;
+    display: inline-block;
+    background-color: green;
+}
+.of {
+    width: 80px;
+    height: 60px;
+    border: 3px solid black;
+    display: inline-block;
+    background-color: red;
+}
+.bulb {
+    width: 60px;
+    height: 60px;
+    border: 3px solid black;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: red;
+}
+.bulbon {
+    width: 60px;
+    height: 60px;
+    border: 3px solid black;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: mediumseagreen;
+}

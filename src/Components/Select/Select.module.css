@@ -1,0 +1,32 @@
+.select {
+    max-width: 150px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.arrow {
+
+}
+
+.options {
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #b2bec7;
+}
+
+.active {
+    background-color: #1ea7fd;
+    color: #FFF;
+}
+
+.options li {
+
+}

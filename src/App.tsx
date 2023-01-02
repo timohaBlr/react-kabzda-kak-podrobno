@@ -4,7 +4,7 @@ import OnOf from "./Components/OnOf/OnOf";
 import {HashRouter, Route, Routes} from "react-router-dom";
 import Navigation from "./Components/Navigation/Navigation";
 import {Accordion} from "./Components/Accordion/Accordion";
-import {Select} from "./Components/Select/Select";
+import SelectContainer from "./Components/Select/SelectContainer";
 
 export type ItemType = {
     id: number,
@@ -13,7 +13,6 @@ export type ItemType = {
 
 function App() {
     const [collapsed, setCollapsed] = useState<boolean>(true);
-    const [activeId, setActiveId] = useState<number>(0);
     const items = [
         {id: 1, value: 'Minsk'},
         {id: 2, value: 'London'},
@@ -38,10 +37,7 @@ function App() {
                                />}
                     />
                 </Routes>
-                <Select
-                    options={items}
-                    activeId={activeId}
-                    callBack={setActiveId}/>
+                <SelectContainer/>
             </div>
         </HashRouter>
     );

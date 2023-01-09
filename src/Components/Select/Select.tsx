@@ -8,7 +8,8 @@ type SelectPropsType = {
     callBack: (id: number) => void
 }
 
-export const Select: React.FC<SelectPropsType> = ({
+
+export const Select: React.FC<SelectPropsType> =React.memo( ({
                                                       activeId, options,
                                                       callBack, ...restProps
                                                   }) => {
@@ -74,7 +75,7 @@ export const Select: React.FC<SelectPropsType> = ({
             >{option.value}</li>
         )
     })
-
+    console.log('Select Rendered')
     return (
         <div className={s.select}
              tabIndex={0}
@@ -91,5 +92,5 @@ export const Select: React.FC<SelectPropsType> = ({
             </ul>}
         </div>
     );
-};
+});
 

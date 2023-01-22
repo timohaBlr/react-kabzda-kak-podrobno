@@ -1,31 +1,30 @@
-import React, { useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 export default {
     title: 'ClocksUseEffect',
 }
 
 
-
 export const ClocksUseEffect = () => {
-    const [hours, setHours] = useState(0)
-    const [minutes, setMinutes] = useState(0)
-    const [seconds, setSeconds] = useState(0)
+    const [date, setDate] = useState(new Date())
     useEffect(() => {
-        const date = new Date(Date.now())
         const timer = setInterval(() => {
-            setHours(date.getHours())
-            setMinutes(date.getMinutes())
-            setSeconds(date.getSeconds())
+            setDate(new Date())
         }, 1000)
         return () => {
             clearInterval(timer)
         }
-    }, [ seconds])
+    }, [])
+
+    const dateTo2DigitsString = (num: number) => {
+        return num < 10 ? '0' + num : num
+    }
     return <div>
-        Hours: {hours}.
-        Minutes: {minutes}.
-        Seconds: {seconds}.
+        {dateTo2DigitsString(date.getHours())}
+        {dateTo2DigitsString(date.getMinutes())}
+        {dateTo2DigitsString(date.getSeconds())}
+        <div className={'arrowClocks'}>
 
-
+        </div>
     </div>
 }

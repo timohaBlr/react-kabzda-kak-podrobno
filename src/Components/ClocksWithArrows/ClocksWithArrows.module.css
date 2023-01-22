@@ -1,0 +1,132 @@
+:root {
+    --secondsDelay: -10s;
+    --minutesDelay: -10s;
+    --hoursDelay: -10s;
+}
+.wrapper {
+    box-sizing: border-box;
+    /*background: #000;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.clocks {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border: 1px solid black;
+}
+
+/*.clocks::before {
+    position: absolute;
+    left: calc(50% - 1px);
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #b44141;
+}*/
+
+.minute, .second, .indicator, .hour {
+    position: absolute;
+    left: calc(50% - 1px);
+    width: 2px;
+    background: #8a3535;
+    transform-origin:  bottom center;
+    z-index: 2;
+    border-radius: 1px;
+}
+
+.second {
+    height: calc(200px / 2 - 10px);
+    margin-top: 10px;
+    background: #4b9aaa;
+    animation: time 60s infinite steps(60) ;
+    z-index: 3;
+    animation-delay: var(--secondsDelay);
+}
+
+.indicator {
+    height: calc(200px / 2 - 2px);
+    border-top: 2px solid #ba0a1f;
+    background: none;
+}
+
+.minute {
+    height: calc(200px / 2 - 20px);
+    margin-top: 20px;
+    opacity: 0.75;
+    animation: time 3600s linear infinite;
+    animation-delay: var(--minutesDelay);
+}
+
+.hour {
+    height: calc(200px / 2 - 40px);
+    margin-top: 40px;
+    animation: time 43200s linear infinite;
+    animation-delay: var(--hoursDelay);
+}
+
+
+
+.indicator:nth-of-type(1n) {
+    transform: rotate(calc(360deg / 12));
+}
+
+.indicator:nth-of-type(2n) {
+    transform: rotate(calc(360deg / 12 *2));
+}
+.indicator:nth-of-type(3n) {
+    transform: rotate(calc(360deg / 12 *3));
+}
+.indicator:nth-of-type(4n) {
+    transform: rotate(calc(360deg / 12 *4));
+}
+.indicator:nth-of-type(5n) {
+    transform: rotate(calc(360deg / 12 *5));
+}
+.indicator:nth-of-type(6n) {
+    transform: rotate(calc(360deg / 12 *6));
+}
+.indicator:nth-of-type(7n) {
+    transform: rotate(calc(360deg / 12 *7));
+}
+.indicator:nth-of-type(8n) {
+    transform: rotate(calc(360deg / 12 *8));
+}
+.indicator:nth-of-type(9n) {
+    transform: rotate(calc(360deg / 12 *9));
+}
+.indicator:nth-of-type(10n) {
+    transform: rotate(calc(360deg / 12 *10));
+}
+.indicator:nth-of-type(11n) {
+    transform: rotate(calc(360deg / 12 *11));
+}
+.indicator:nth-of-type(12n) {
+    transform: rotate(calc(360deg / 12 *12));
+}
+
+
+
+.axis {
+    background: #4b9aaa;
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 4;
+    top: calc(200px / 2 - 3);
+}
+
+@keyframes time {
+    to {
+        transform: rotateZ(360deg);
+    }
+}

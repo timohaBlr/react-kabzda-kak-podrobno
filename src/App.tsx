@@ -5,6 +5,7 @@ import {HashRouter, Route, Routes} from "react-router-dom";
 import Navigation from "./Components/Navigation/Navigation";
 import {Accordion} from "./Components/Accordion/Accordion";
 import SelectContainer from "./Components/Select/SelectContainer";
+import {ClocksWithArrows} from "./Components/ClocksWithArrows/ClocksWithArrows";
 
 export type ItemType = {
     id: number,
@@ -38,6 +39,7 @@ function App() {
                     />
                 </Routes>
                 <SelectContainer/>
+                <ClocksWithArrows/>
             </div>
         </HashRouter>
     );
